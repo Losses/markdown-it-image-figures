@@ -20,7 +20,7 @@ function findCaptionText(captionType, image) {
   }
 
   if (captionType === 'alt') {
-    return image.content;
+    return image.content || image.children[0].content;
   }
 
   const captionObj = image.attrs.find(([k]) => k === 'title');
